@@ -52,9 +52,9 @@ stages:
         command: restore
         projects: '**/WebApp.csproj'
     
-    - task: WhiteSource Bolt@20
-      displayName: Scan Nuget Packages
-      enabled: ${{ parameters.runCompletePipeline }}
+   # - task: WhiteSource Bolt@20
+   #   displayName: Scan Nuget Packages
+   #   enabled: ${{ parameters.runCompletePipeline }}
 
     - task: PowerShell@2
       displayName: Prepare for Sonar Cloud
@@ -76,13 +76,13 @@ stages:
                 }
         workingDirectory: 'WebApp'
 
-    - task: SonarCloudPrepare@1
-      displayName: Prepare analysis on SonarCloud
-      enabled: ${{ parameters.runCompletePipeline }}
-      inputs:
-        SonarCloud: SonarCloud
-        organization: AS-AzureDevOps
-        projectKey: as-sonar
+   # - task: SonarCloudPrepare@1
+   #   displayName: Prepare analysis on SonarCloud
+   #   enabled: ${{ parameters.runCompletePipeline }}
+   #   inputs:
+   #     SonarCloud: SonarCloud
+   #     organization: AS-AzureDevOps
+   #     projectKey: as-sonar
 
     - task: DotNetCoreCLI@2
       displayName: Build WebApp
