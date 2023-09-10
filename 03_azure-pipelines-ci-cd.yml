@@ -52,9 +52,9 @@ stages:
         command: restore
         projects: '**/WebApp.csproj'
     
-   # - task: WhiteSource Bolt@20
-   #   displayName: Scan Nuget Packages
-   #   enabled: ${{ parameters.runCompletePipeline }}
+    - task: WhiteSource Bolt@20
+      displayName: Scan Nuget Packages
+      enabled: ${{ parameters.runCompletePipeline }}
 
     - task: PowerShell@2
       displayName: Prepare for Sonar Cloud
@@ -264,7 +264,7 @@ stages:
       inputs:
         deploymentScope: 'Resource Group'
         azureResourceManagerConnection: 'AS-Practice-Subsciption-001(0151ba51-6f90-4d09-a387-ba3b605c08de)'
-        subscriptionId: '4b72ed90-7ca3-4e76-8d0f-31a2c0bee7a3'
+        subscriptionId: 'AS-Practice-Subsciption-001(0151ba51-6f90-4d09-a387-ba3b605c08de)'
         action: 'Create Or Update Resource Group'
         resourceGroupName: '$(ResourceGroupName)'
         location: 'West Europe'
@@ -282,7 +282,7 @@ stages:
         ConnectedServiceNameARM: 'AS-Practice-Subsciption-001(0151ba51-6f90-4d09-a387-ba3b605c08de)'
         GenerateMethodParameterSetSelection: 'ResourceGroupName'
         ResourceGroupName: '$(ResourceGroupName)'
-        SubscriptionId: '4b72ed90-7ca3-4e76-8d0f-31a2c0bee7a3'
+        SubscriptionId: 'AS-Practice-Subsciption-001(0151ba51-6f90-4d09-a387-ba3b605c08de)'
         EnableGSSscan: true
 
   - job: Deploy_DEV
