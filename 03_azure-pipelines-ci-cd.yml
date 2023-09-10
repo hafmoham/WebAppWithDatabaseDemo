@@ -80,14 +80,14 @@ stages:
                 }
         workingDirectory: 'WebApp'
 
-    - task: SonarCloudPrepare@1
-      displayName: Prepare analysis on SonarCloud
-      enabled: ${{ parameters.runCompletePipeline }}
-      inputs:
-        SonarCloud: 'SonarCloud-Conn'
-        organization: 'AS-AzureDevOps'
-        scannerMode: 'MSBuild'
-        projectKey: 'as-sonar'
+#    - task: SonarCloudPrepare@1
+#      displayName: Prepare analysis on SonarCloud
+#      enabled: ${{ parameters.runCompletePipeline }}
+#      inputs:
+#        SonarCloud: 'SonarCloud-Conn'
+#        organization: 'AS-AzureDevOps'
+#        scannerMode: 'MSBuild'
+#        projectKey: 'as-sonar'
 
     - task: DotNetCoreCLI@2
       displayName: Build WebApp
