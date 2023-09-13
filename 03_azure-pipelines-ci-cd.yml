@@ -213,7 +213,7 @@ stages:
         downloadPath: $(System.DefaultWorkingDirectory)
 
     - task: AzureResourceGroupDeployment@2
-     enabled: ${{ parameters.runCompletePipeline }}
+      enabled: ${{ parameters.runCompletePipeline }}
       inputs:
         azureSubscription: 'AS-Practice-Subsciption-001(0151ba51-6f90-4d09-a387-ba3b605c08de)'
         action: 'Create Or Update Resource Group'
